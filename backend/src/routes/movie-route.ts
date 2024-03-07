@@ -2,7 +2,7 @@ import { Router } from "express";
 import userMiddleware from "../middlewares/user-middleware";
 import commonMiddleware from "../config/storage-middleware";
 
-import { CreateMovie } from "../controllers/movie-controller";
+import { CreateMovie, FindAllMovies } from "../controllers/movie-controller";
 import constants from "../utills/constants";
 
 const ProductRouter = Router();
@@ -14,14 +14,11 @@ ProductRouter.post(
   CreateMovie
 );
 
-// ProductRouter.get(
-//   "/getAllProduct",
-//   userMiddleware.authorize([
-//     constants.USER.ROLES.ADMIN,
-//     constants.USER.ROLES.USER,
-//   ]),
-//   FindAllProducts
-// );
+ProductRouter.get(
+  "/getAllMovies",
+  userMiddleware.authorize([constants.USER.ROLES.USER]),
+  FindAllMovies
+);
 
 // ProductRouter.post(
 //   "/updateProduct/:productId",

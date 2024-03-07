@@ -74,4 +74,25 @@ const CreateMovie = async (req: Request, res: Response) => {
   }
 };
 
-export { CreateMovie };
+const FindAllMovies = async (req: Request, res: Response) => {
+  try {
+    const allProducts = await movieService.findAllMovie();
+
+    CustomResponse(
+      res,
+      true,
+      StatusCodes.OK,
+      "All movies retrieved successfully!",
+      allProducts
+    );
+  } catch (error: any) {
+    console.error(error);
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: "Error retrieving movies",
+      error: error.message,
+    });
+  }
+};
+
+export { CreateMovie, FindAllMovies };

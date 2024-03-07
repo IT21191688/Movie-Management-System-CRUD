@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateMovie = void 0;
+exports.FindAllMovies = exports.CreateMovie = void 0;
 const http_status_codes_1 = require("http-status-codes");
 const movie_model_1 = __importDefault(require("../models/movie-model"));
 const user_service_1 = __importDefault(require("../services/user-service"));
@@ -56,3 +56,18 @@ const CreateMovie = async (req, res) => {
     }
 };
 exports.CreateMovie = CreateMovie;
+const FindAllMovies = async (req, res) => {
+    try {
+        const allProducts = await movie_service_1.default.findAllMovie();
+        (0, responce_1.default)(res, true, http_status_codes_1.StatusCodes.OK, "All movies retrieved successfully!", allProducts);
+    }
+    catch (error) {
+        console.error(error);
+        res.status(http_status_codes_1.StatusCodes.INTERNAL_SERVER_ERROR).json({
+            success: false,
+            message: "Error retrieving movies",
+            error: error.message,
+        });
+    }
+};
+exports.FindAllMovies = FindAllMovies;
