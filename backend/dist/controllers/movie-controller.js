@@ -49,7 +49,7 @@ const CreateProduct = async (req, res) => {
         console.error(error);
         res.status(http_status_codes_1.StatusCodes.INTERNAL_SERVER_ERROR).json({
             success: false,
-            message: "Error creating product",
+            message: "Error creating Movie",
             error: error.message,
         });
     }
