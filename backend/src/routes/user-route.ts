@@ -5,7 +5,6 @@ import {
   RegisterUser,
   GetUserProfile,
   UserLogin,
-  // getAuth,
 } from "../controllers/user-controller";
 import constants from "../utills/constants";
 
@@ -14,8 +13,6 @@ const UserRouter = Router();
 UserRouter.post("/register", RegisterUser);
 
 UserRouter.post("/login", UserLogin);
-
-//UserRouter.post("/getAuth", getAuth);
 
 UserRouter.get(
   "/profile",

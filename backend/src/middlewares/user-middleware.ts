@@ -37,6 +37,7 @@ const authorize = (rolesArray: any = []) => {
           new UnauthorizedError(`You're unauthorized to access this resource!`)
         );
       }
+      
 
       if (rolesArray.length && !rolesArray.includes(payload.role)) {
         return next(
