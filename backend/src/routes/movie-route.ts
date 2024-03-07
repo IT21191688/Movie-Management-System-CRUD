@@ -2,44 +2,47 @@ import { Router } from "express";
 import userMiddleware from "../middlewares/user-middleware";
 import commonMiddleware from "../config/storage-middleware";
 
-import { CreateMovie, FindAllMovies } from "../controllers/movie-controller";
+import {
+  CreateMovie,
+  DeleteMovie,
+  EditMovieDetails,
+  FindAllMovies,
+  FindOneMovieById,
+} from "../controllers/movie-controller";
 import constants from "../utills/constants";
 
-const ProductRouter = Router();
+const MovieRouter = Router();
 
-ProductRouter.post(
+MovieRouter.post(
   "/createMovie",
   userMiddleware.authorize([constants.USER.ROLES.USER]),
   commonMiddleware.multerUploader.single("movieimage"),
   CreateMovie
 );
 
-ProductRouter.get(
+MovieRouter.get(
   "/getAllMovies",
   userMiddleware.authorize([constants.USER.ROLES.USER]),
   FindAllMovies
 );
 
-// ProductRouter.post(
-//   "/updateProduct/:productId",
-//   userMiddleware.authorize([constants.USER.ROLES.ADMIN]),
-//   commonMiddleware.multerUploader.single("productimage"),
-//   EditProductDetails
-// );
+MovieRouter.post(
+  "/updateMovie/:movieId",
+  userMiddleware.authorize([constants.USER.ROLES.USER]),
+  commonMiddleware.multerUploader.single("movieimage"),
+  EditMovieDetails
+);
 
-// ProductRouter.get(
-//   "/getOneProduct/:productId",
-//   userMiddleware.authorize([
-//     constants.USER.ROLES.ADMIN,
-//     constants.USER.ROLES.USER,
-//   ]),
-//   FindOneProductById
-// );
+MovieRouter.get(
+  "/getOneProduct/:movieId",
+  userMiddleware.authorize([constants.USER.ROLES.USER]),
+  FindOneMovieById
+);
 
-// ProductRouter.delete(
-//   "/deleteProduct/:productId",
-//   userMiddleware.authorize([constants.USER.ROLES.ADMIN]),
-//   DeleteProduct
-// );
+MovieRouter.delete(
+  "/deleteMovie/:movieId",
+  userMiddleware.authorize([constants.USER.ROLES.USER]),
+  DeleteMovie
+);
 
-export default ProductRouter;
+export default MovieRouter;

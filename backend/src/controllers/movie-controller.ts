@@ -95,4 +95,112 @@ const FindAllMovies = async (req: Request, res: Response) => {
   }
 };
 
-export { CreateMovie, FindAllMovies };
+const EditMovieDetails = async (req: Request, res: Response) => {
+  const auth: any = req.auth;
+  const movieId = req.params.movieId;
+
+  try {
+    const movie = await movieService.findById(movieId);
+
+    if (!movie) {
+      throw new NotFoundError("Product not found!");
+    }
+
+    if (!movie.addedBy || movie.addedBy.toString() !== auth._id.toString()) {
+      throw new ForbiddenError("You are not authorized to edit this movie!");
+    }
+
+    const updatedDetails = req.body;
+    const updatedMovie = await movieService.editMovieDetails(
+      movieId,
+      updatedDetails
+    );
+
+    CustomResponse(
+      res,
+      true,
+      StatusCodes.OK,
+      "Product updated successfully!",
+      updatedMovie
+    );
+  } catch (error: any) {
+    console.error(error);
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: "Error updating Movie",
+      error: error.message,
+    });
+  }
+};
+
+const DeleteMovie = async (req: Request, res: Response) => {
+  const auth: any = req.auth;
+  const movieId = req.params.movieId;
+
+  try {
+    const movie = await movieService.findById(movieId);
+
+    if (!movie) {
+      throw new NotFoundError("Movie not found!");
+    }
+
+    if (!movie.addedBy || movie.addedBy.toString() !== auth._id.toString()) {
+      throw new ForbiddenError("You are not authorized to edit this Movie!");
+    }
+    await movieService.deleteMovieById(movieId);
+
+    CustomResponse(
+      res,
+      true,
+      StatusCodes.OK,
+      "Movie deleted successfully!",
+      null
+    );
+  } catch (error: any) {
+    console.error(error);
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: "Error deleting Movie",
+      error: error.message,
+    });
+  }
+};
+
+const FindOneMovieById = async (req: Request, res: Response) => {
+  const auth: any = req.auth;
+  const movieId = req.params.movieId;
+
+  const user = await userService.findById(auth._id);
+  if (!user) throw new NotFoundError("User not found!");
+
+  try {
+    const movie = await movieService.findById(movieId);
+
+    if (!movie) {
+      throw new NotFoundError("movie not found!");
+    }
+
+    CustomResponse(
+      res,
+      true,
+      StatusCodes.OK,
+      "movie retrieved successfully!",
+      movie
+    );
+  } catch (error: any) {
+    console.error(error);
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      message: "Error retrieving movie",
+      error: error.message,
+    });
+  }
+};
+
+export {
+  CreateMovie,
+  FindAllMovies,
+  EditMovieDetails,
+  DeleteMovie,
+  FindOneMovieById,
+};
