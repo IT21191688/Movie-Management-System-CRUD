@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const UserRegisteredEmail = (data) => {
-    return `<!DOCTYPE html>
+    return `
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to University Timetable System</title>
+    <title>Welcome to Movie Management System</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -33,18 +34,18 @@ const UserRegisteredEmail = (data) => {
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to University Timetable System, ${data.fullName}!</h1>
+        <h1>Welcome to Movie Management System, ${data.fullName}!</h1>
         <p>Dear ${data.fullName},</p>
-        <p>Congratulations! You have successfully registered on our university timetable platform.</p>
-        <p>Thank you for joining our platform. We're excited to help you manage your academic schedule effectively.</p>
-        <p>Feel free to explore your personalized timetable and manage your courses efficiently.</p>
-        <p>If you have any questions or need assistance, don't hesitate to contact your university administration.</p>
+        <p>Congratulations! You have successfully registered on our movie management platform.</p>
+        <p>Thank you for joining our platform. We're excited to help you manage your movie collection effectively.</p>
+        <p>Feel free to explore our movie catalog, add new movies, and organize your watchlist.</p>
+        <p>If you have any questions or need assistance, don't hesitate to contact our support team.</p>
+        <p>Enjoy managing your movies!</p>
         <p>Best regards,</p>
-        <p>University Timetable System Team</p>
+        <p>Movie Management System Team</p>
     </div>
 </body>
 </html>
-
     `;
 };
 exports.default = {
