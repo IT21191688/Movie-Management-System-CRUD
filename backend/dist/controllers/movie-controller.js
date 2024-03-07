@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CreateMovie = void 0;
 const http_status_codes_1 = require("http-status-codes");
 const movie_model_1 = __importDefault(require("../models/movie-model"));
 const user_service_1 = __importDefault(require("../services/user-service"));
@@ -12,7 +13,7 @@ const BadRequestError_1 = __importDefault(require("../utills/error/error.classes
 const constants_1 = __importDefault(require("../utills/constants"));
 const responce_1 = __importDefault(require("../utills/responce"));
 const storage_config_1 = __importDefault(require("../config/storage-config"));
-const CreateProduct = async (req, res) => {
+const CreateMovie = async (req, res) => {
     const body = req.body;
     const auth = req.auth;
     let file = req.file;
@@ -54,3 +55,4 @@ const CreateProduct = async (req, res) => {
         });
     }
 };
+exports.CreateMovie = CreateMovie;

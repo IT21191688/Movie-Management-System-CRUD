@@ -16,7 +16,7 @@ import CustomResponse from "../utills/responce";
 
 import commonService from "../config/storage-config";
 
-const CreateProduct = async (req: Request, res: Response) => {
+const CreateMovie = async (req: Request, res: Response) => {
   const body = req.body;
   const auth = req.auth;
   let file: any = req.file;
@@ -73,3 +73,5 @@ const CreateProduct = async (req: Request, res: Response) => {
     });
   }
 };
+
+export { CreateMovie };
