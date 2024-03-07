@@ -10,5 +10,8 @@ const constants = {
             USER: "user",
         },
     },
+    CLOUDINARY: {
+        FILE_NAME: "Movie-Management",
+    },
 };
 exports.default = constants;

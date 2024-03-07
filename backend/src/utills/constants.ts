@@ -9,6 +9,10 @@ const constants = {
       USER: "user",
     },
   },
+
+  CLOUDINARY: {
+    FILE_NAME: "Movie-Management",
+  },
 };
 
 export default constants;
