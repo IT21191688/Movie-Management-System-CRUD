@@ -11,7 +11,7 @@ const UpdateMovie: React.FC = () => {
   const [moviedirector, setMovieDirector] = useState("");
   const [moviegenre, setMovieGenre] = useState("");
   const [relesedate, setReleaseDate] = useState("");
-  const [movieimage, setMovieImage] = useState<File | undefined>(undefined);
+  //const [movieimage, setMovieImage] = useState<File | undefined>(undefined);
 
   useEffect(() => {
     fetchMovieDetails();
