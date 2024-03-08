@@ -9,7 +9,7 @@ const save = async (product: any, session: any) => {
 };
 
 const findAllMovie = () => {
-  return Movie.find({});
+  return Movie.find({}).populate("addedBy");
 };
 
 const findAllByAddedBy = (addedBy: any) => {

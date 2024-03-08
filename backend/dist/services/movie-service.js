@@ -13,7 +13,7 @@ const save = async (product, session) => {
     }
 };
 const findAllMovie = () => {
-    return movie_model_1.default.find({});
+    return movie_model_1.default.find({}).populate("addedBy");
 };
 const findAllByAddedBy = (addedBy) => {
     return movie_model_1.default.find({

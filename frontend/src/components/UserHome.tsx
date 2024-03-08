@@ -199,10 +199,21 @@ const UserHome: React.FC = () => {
                         {movie.movietitle}
                       </h3>
                       <p className="text-gray-600 mb-4">
-                        <strong>Director:</strong> {movie.director}
+                        <strong>Director:</strong> {movie.moviedirector}
                       </p>
                       <p className="text-gray-600 mb-4">
-                        <strong>Genre:</strong> {movie.genre}
+                        <strong>Genre:</strong> {movie.moviegenre}
+                      </p>
+                      <p className="text-gray-600 mb-4">
+                        <strong>Release Date:</strong> <br></br>
+                        {new Date(movie.relesedate).toLocaleDateString(
+                          "en-US",
+                          {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          }
+                        )}
                       </p>
                     </div>
                   </div>

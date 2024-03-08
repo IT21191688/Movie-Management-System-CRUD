@@ -10,6 +10,8 @@ import RegisterPage from "./components/RegisterPage";
 //import UserProducts from "./components/UserProduct";
 import UserProfile from "./components/UserProfile";
 import { ToastContainer } from "react-toastify";
+import AllMovies from "./components/AllMovies";
+import AddNewMovie from "./components/AddNewMovie";
 
 function App() {
   const [user, setUser] = useState<string | null>(null);
@@ -31,7 +33,10 @@ function App() {
           <Routes>
             <Route path="/userHome" element={<UserHome />} />
             {/* <Route path="/userProducts" element={<UserProducts />} /> */}
+
+            <Route path="/allMovies" element={<AllMovies />} />
             <Route path="/userProfile" element={<UserProfile />} />
+            <Route path="/addNewMovie" element={<AddNewMovie />} />
           </Routes>
         </Router>
       ) : null}

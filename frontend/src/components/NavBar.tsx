@@ -115,7 +115,7 @@ export default function NavBar() {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="/movies">
+                    <a className="nav-link" href="/allMovies">
                       <FontAwesomeIcon icon={faFilm} /> Movies
                     </a>
                   </li>
