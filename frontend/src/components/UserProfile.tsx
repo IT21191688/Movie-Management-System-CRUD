@@ -46,7 +46,7 @@ const UserProfile: React.FC = () => {
     }
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async () => {
     navigate("/UserHome");
     window.location.reload();
   };

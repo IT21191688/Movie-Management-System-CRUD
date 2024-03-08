@@ -90,13 +90,19 @@ const AddNewMovie: React.FC = () => {
           <label className="block text-sm font-medium text-gray-700">
             Movie Genre:
           </label>
-          <input
-            type="text"
+          <select
             value={moviegenre}
             onChange={(e) => setMovieGenre(e.target.value)}
             className="form-control border-gray-300 rounded-md w-full p-2 mt-1"
             required
-          />
+          >
+            <option value="">Select Genre</option>
+            <option value="Action">Action</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Documentary">Documentary</option>
+          </select>
         </div>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">

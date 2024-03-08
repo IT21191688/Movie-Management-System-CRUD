@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { showSuccessToast, showErrorToast } from "./services/AlertService";
+import { showErrorToast } from "./services/AlertService";
 
 const MovieDisplay: React.FC = () => {
   const { movieId } = useParams<{ movieId: string }>();

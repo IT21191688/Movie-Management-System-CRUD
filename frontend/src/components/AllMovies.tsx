@@ -201,7 +201,7 @@ const AllMovies: React.FC = () => {
                 <td className="border px-4 py-2 text-center">
                   <Link
                     to={`/updateMovie/${movie._id}`}
-                    className="btn btn-primary mr-2"
+                    className="btn btn-success mr-2"
                   >
                     Update
                   </Link>

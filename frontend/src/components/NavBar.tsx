@@ -37,7 +37,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav className="bg-blue-700 shadow-lg py-4">
+    <nav className="bg-black shadow-lg py-4">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex">
