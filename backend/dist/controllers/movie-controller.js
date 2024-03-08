@@ -78,14 +78,14 @@ const EditMovieDetails = async (req, res) => {
     try {
         const movie = await movie_service_1.default.findById(movieId);
         if (!movie) {
-            throw new NotFoundError_1.default("Product not found!");
+            throw new NotFoundError_1.default("Movie not found!");
         }
         if (!movie.addedBy || movie.addedBy.toString() !== auth._id.toString()) {
             throw new ForbiddenError_1.default("You are not authorized to edit this movie!");
         }
         const updatedDetails = req.body;
         const updatedMovie = await movie_service_1.default.editMovieDetails(movieId, updatedDetails);
-        (0, responce_1.default)(res, true, http_status_codes_1.StatusCodes.OK, "Product updated successfully!", updatedMovie);
+        (0, responce_1.default)(res, true, http_status_codes_1.StatusCodes.OK, "Movie updated successfully!", updatedMovie);
     }
     catch (error) {
         console.error(error);

@@ -103,7 +103,7 @@ const EditMovieDetails = async (req: Request, res: Response) => {
     const movie = await movieService.findById(movieId);
 
     if (!movie) {
-      throw new NotFoundError("Product not found!");
+      throw new NotFoundError("Movie not found!");
     }
 
     if (!movie.addedBy || movie.addedBy.toString() !== auth._id.toString()) {
@@ -120,7 +120,7 @@ const EditMovieDetails = async (req: Request, res: Response) => {
       res,
       true,
       StatusCodes.OK,
-      "Product updated successfully!",
+      "Movie updated successfully!",
       updatedMovie
     );
   } catch (error: any) {

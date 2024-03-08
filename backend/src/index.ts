@@ -11,6 +11,14 @@ dotenv.config();
 
 app.use(express.json());
 
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST", "PATCH", "DELETE"], // Include the PATCH method here
+    optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
+  })
+);
+
 requestMappings(app);
 app.use(errorHandlerMiddleware);
 
