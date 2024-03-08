@@ -53,7 +53,7 @@ const AddNewMovie: React.FC = () => {
   };
 
   const handleCancel = () => {
-    navigate("/all-movies");
+    navigate("/AllMovies");
   };
 
   return (
