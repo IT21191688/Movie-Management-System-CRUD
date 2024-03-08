@@ -27,7 +27,7 @@ Features
 
 User Authentication: Users can sign up and log in securely using JWT token authentication.
 
-Movie Management: Users can add new movies with images, update existing movies, and view all movies.
+Movie Management: Users can add new movies with images, update existing movies, and view all movies.(Only movie Added person only can edit and delete movie. use sample credentials for login)
 
 Movie Details: Users can view specific details of each movie.
 
@@ -55,7 +55,7 @@ backend=npm run dev
 frontend=npm run dev
 
 ============================================================================
-Sample 
+Sample Credentials
 
  Username=sadeepa123@gmail.com
-          password=sadeepa123
+ password=sadeepa123
