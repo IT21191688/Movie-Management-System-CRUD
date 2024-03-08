@@ -22,7 +22,7 @@ const MovieScema = new mongoose_1.default.Schema({
         type: String,
         required: [true, "movie director is required!"],
     },
-    discription: {
+    description: {
         type: String,
         maxlength: [500, "Description cannot be more than 500 characters!"],
     },

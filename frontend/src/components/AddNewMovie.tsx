@@ -10,6 +10,7 @@ const AddNewMovie: React.FC = () => {
   const [moviedirector, setMovieDirector] = useState("");
   const [moviegenre, setMovieGenre] = useState("");
   const [releasedate, setReleaseDate] = useState("");
+  const [description, setDescription] = useState("");
   const [movieimage, setMovieImage] = useState<File | undefined>(undefined);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -21,6 +22,7 @@ const AddNewMovie: React.FC = () => {
       formData.append("moviedirector", moviedirector);
       formData.append("moviegenre", moviegenre);
       formData.append("releasedate", releasedate);
+      formData.append("releasedate", description);
       formData.append("movieimage", movieimage || "");
 
       const token = localStorage.getItem("token");
@@ -96,6 +98,19 @@ const AddNewMovie: React.FC = () => {
             required
           />
         </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">
+            Movie Description:
+          </label>
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="form-control border-gray-300 rounded-md w-full p-2 mt-1"
+            rows={4}
+            required
+          ></textarea>
+        </div>
+
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">
             Release Date:

@@ -11,6 +11,7 @@ const UpdateMovie: React.FC = () => {
   const [moviedirector, setMovieDirector] = useState("");
   const [moviegenre, setMovieGenre] = useState("");
   const [relesedate, setReleaseDate] = useState("");
+  const [description, setDescription] = useState("");
   //const [movieimage, setMovieImage] = useState<File | undefined>(undefined);
 
   useEffect(() => {
@@ -36,6 +37,7 @@ const UpdateMovie: React.FC = () => {
       setMovieDirector(data.moviedirector);
       setMovieGenre(data.moviegenre);
       setReleaseDate(data.relesedate);
+      setDescription(data.description);
     } catch (error) {
       console.error("Error fetching movie details:", error);
       showErrorToast("Error fetching movie details");
@@ -133,6 +135,18 @@ const UpdateMovie: React.FC = () => {
             className="form-control border-gray-300 rounded-md w-full p-2 mt-1"
             required
           />
+        </div>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">
+            Movie Description:
+          </label>
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="form-control border-gray-300 rounded-md w-full p-2 mt-1"
+            rows={4}
+            required
+          ></textarea>
         </div>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">
