@@ -12,6 +12,7 @@ import UserProfile from "./components/UserProfile";
 import { ToastContainer } from "react-toastify";
 import AllMovies from "./components/AllMovies";
 import AddNewMovie from "./components/AddNewMovie";
+import UpdateMovie from "./components/UpdateMovie";
 
 function App() {
   const [user, setUser] = useState<string | null>(null);
@@ -32,11 +33,10 @@ function App() {
         <Router>
           <Routes>
             <Route path="/userHome" element={<UserHome />} />
-            {/* <Route path="/userProducts" element={<UserProducts />} /> */}
-
             <Route path="/allMovies" element={<AllMovies />} />
             <Route path="/userProfile" element={<UserProfile />} />
             <Route path="/addNewMovie" element={<AddNewMovie />} />
+            <Route path="/updateMovie/:movieId" element={<UpdateMovie />} />
           </Routes>
         </Router>
       ) : null}

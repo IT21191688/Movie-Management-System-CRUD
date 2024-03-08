@@ -186,11 +186,17 @@ const AllMovies: React.FC = () => {
                 <td>
                   <img className="w-16" src={movie.movieimage} alt="Movie" />
                 </td>
-                <td>{movie.releasedate}</td>
+                <td>
+                  {new Date(movie.relesedate).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </td>
                 <td>{movie.addedBy.firstname}</td>
                 <td className="border px-4 py-2 text-center">
                   <Link
-                    to={`/edit-movie/${movie._id}`}
+                    to={`/updateMovie/${movie._id}`}
                     className="btn btn-primary mr-2"
                   >
                     Update

@@ -12,6 +12,6 @@ const MovieRouter = (0, express_1.Router)();
 MovieRouter.post("/createMovie", user_middleware_1.default.authorize([constants_1.default.USER.ROLES.USER]), storage_middleware_1.default.multerUploader.single("movieimage"), movie_controller_1.CreateMovie);
 MovieRouter.get("/getAllMovies", user_middleware_1.default.authorize([constants_1.default.USER.ROLES.USER]), movie_controller_1.FindAllMovies);
 MovieRouter.post("/updateMovie/:movieId", user_middleware_1.default.authorize([constants_1.default.USER.ROLES.USER]), storage_middleware_1.default.multerUploader.single("movieimage"), movie_controller_1.EditMovieDetails);
-MovieRouter.get("/getOneProduct/:movieId", user_middleware_1.default.authorize([constants_1.default.USER.ROLES.USER]), movie_controller_1.FindOneMovieById);
+MovieRouter.get("/getOneMovie/:movieId", user_middleware_1.default.authorize([constants_1.default.USER.ROLES.USER]), movie_controller_1.FindOneMovieById);
 MovieRouter.delete("/deleteMovie/:movieId", user_middleware_1.default.authorize([constants_1.default.USER.ROLES.USER]), movie_controller_1.DeleteMovie);
 exports.default = MovieRouter;

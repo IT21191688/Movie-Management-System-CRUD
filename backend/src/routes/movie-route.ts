@@ -34,7 +34,7 @@ MovieRouter.post(
 );
 
 MovieRouter.get(
-  "/getOneProduct/:movieId",
+  "/getOneMovie/:movieId",
   userMiddleware.authorize([constants.USER.ROLES.USER]),
   FindOneMovieById
 );
