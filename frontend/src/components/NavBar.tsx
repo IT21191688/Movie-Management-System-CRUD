@@ -53,60 +53,7 @@ export default function NavBar() {
 
           <div className="md:flex md:items-center space-x-4">
             <ul className="flex space-x-4 text-white">
-              {role === "admin" && (
-                <>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/adminHome">
-                      <FontAwesomeIcon icon={faHome} /> Dashboard
-                    </a>
-                  </li>
-
-                  <li
-                    className="nav-item relative group"
-                    onMouseEnter={toggleDropdown}
-                    onMouseLeave={closeDropdown}
-                  >
-                    <button className="nav-link focus:outline-none">
-                      <FontAwesomeIcon icon={faUser} /> Profile
-                      <FontAwesomeIcon
-                        icon={faChevronDown}
-                        className={`ml-1 fas fa-chevron-down ${
-                          isDropdownOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                    <div
-                      className={`${
-                        isDropdownOpen
-                          ? "opacity-100 scale-100"
-                          : "opacity-0 scale-95"
-                      } origin-top-right absolute right-0 mt-2 transition-transform transform-gpu duration-200 ease-in-out ${
-                        isDropdownOpen ? "scale-y-100" : "scale-y-0"
-                      }`}
-                    >
-                      <ul className="bg-white text-black border border-gray-200 rounded-lg">
-                        <li>
-                          <a
-                            className="block px-4 py-2 hover:bg-gray-200"
-                            href={"/profile"}
-                          >
-                            Profile
-                          </a>
-                        </li>
-
-                        <li>
-                          <button
-                            className="block px-4 py-2 hover:bg-gray-200"
-                            onClick={() => logOut()}
-                          >
-                            LogOut
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </>
-              )}
+              {role === "admin" && <></>}
               {role === "user" && (
                 <>
                   <li className="nav-item">

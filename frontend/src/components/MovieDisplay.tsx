@@ -53,6 +53,11 @@ const MovieDisplay: React.FC = () => {
     return `${year}-${month}-${day}`;
   };
 
+  function handleBack() {
+    navigate("/UserHome");
+    window.location.reload();
+  }
+
   return (
     <>
       <div className="container mx-auto py-8">
@@ -77,6 +82,14 @@ const MovieDisplay: React.FC = () => {
                   <p className="text-gray-700">{description}</p>
                 </div>
               </div>
+            </div>
+            <div className="mt-6">
+              <button
+                className="bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none hover:bg-blue-700"
+                onClick={handleBack}
+              >
+                Back
+              </button>
             </div>
           </div>
         </div>

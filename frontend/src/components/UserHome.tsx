@@ -169,7 +169,7 @@ const UserHome: React.FC = () => {
 
       <div className="container pt-5 h-full">
         <h1 className="text-center text-black font-inter font-bold text-2xl md:text-4xl">
-          FEATURED MOVIES
+          Latest MOVIES
         </h1>
 
         {/* Rest of your UI code for displaying movies */}

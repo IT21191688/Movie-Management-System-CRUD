@@ -77,9 +77,9 @@ const LoginPage: React.FC = () => {
     <div className="min-h-screen bg-gray-100 flex justify-center items-center">
       <div className="w-full lg:w-1/3 lg:px-10 flex justify-center items-center">
         <div className="w-full lg:w-auto mx-auto flex flex-col items-center">
-          <h1 className="text-4xl font-bold">Welcome to The Shop</h1>
+          <h1 className="text-4xl font-bold">Welcome to Movie Management</h1>
           <p className="mt-2 text-lg">
-            Your go-to destination for all your shopping needs!
+            Your go-to destination for managing all your movies!
           </p>
         </div>
       </div>

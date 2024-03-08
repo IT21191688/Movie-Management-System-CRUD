@@ -22,7 +22,7 @@ const AddNewMovie: React.FC = () => {
       formData.append("moviedirector", moviedirector);
       formData.append("moviegenre", moviegenre);
       formData.append("releasedate", releasedate);
-      formData.append("releasedate", description);
+      formData.append("description", description);
       formData.append("movieimage", movieimage || "");
 
       const token = localStorage.getItem("token");

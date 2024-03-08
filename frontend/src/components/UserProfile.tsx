@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 //import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
-import { showSuccessToast } from "./services/AlertService";
 
 const UserProfile: React.FC = () => {
   const navigate = useNavigate();
@@ -13,8 +12,6 @@ const UserProfile: React.FC = () => {
   const [address, setAddress] = useState("");
   const [telephone, setTelephone] = useState("");
   const [role, setRole] = useState("");
-
-  const [orders, setOrders] = useState([]);
   useEffect(() => {
     fetchProfile();
   }, []);

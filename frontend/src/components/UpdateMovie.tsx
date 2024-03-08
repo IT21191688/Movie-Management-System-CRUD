@@ -53,6 +53,7 @@ const UpdateMovie: React.FC = () => {
       formData.append("moviedirector", moviedirector);
       formData.append("moviegenre", moviegenre);
       formData.append("releasedate", relesedate);
+      formData.append("description", description);
       // formData.append("movieimage", movieimage || "");
 
       const token = localStorage.getItem("token");

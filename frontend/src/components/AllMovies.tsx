@@ -73,9 +73,9 @@ const AllMovies: React.FC = () => {
       );
     }
     if (sortByYear) {
+      // alert(sortByYear);
       sortedList = sortedList.filter(
-        (movie: any) =>
-          new Date(movie.releasedate).getFullYear() === +sortByYear
+        (movie: any) => new Date(movie.relesedate).getFullYear() === +sortByYear
       );
     }
     setSortedMovies(sortedList);
@@ -116,7 +116,9 @@ const AllMovies: React.FC = () => {
             <option value="Action">Action</option>
             <option value="Comedy">Comedy</option>
             <option value="Drama">Drama</option>
-            {/* Add more genre options */}
+            <option value="Thriller">Thriller</option>
+            <option value="Horror">Horror</option>
+            <option value="Science Fiction">Science Fiction</option>
           </select>
         </div>
         <div className="col-md-3">
@@ -131,6 +133,8 @@ const AllMovies: React.FC = () => {
             className="w-full border rounded-md py-2 px-2"
           >
             <option value="">All</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
             <option value="2022">2022</option>
             <option value="2021">2021</option>
             <option value="2020">2020</option>
