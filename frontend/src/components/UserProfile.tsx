@@ -28,7 +28,7 @@ const UserProfile: React.FC = () => {
       };
 
       const response = await axios.get(
-        "http://localhost:8001/api/v1/user/profile",
+        "https://movie-management-system-crud-1234.onrender.com/api/v1/user/profile",
         { headers }
       );
 

@@ -29,7 +29,7 @@ export default function RegisterPage() {
       };
 
       const response = await axios.post(
-        "http://localhost:8001/api/v1/user/register",
+        "https://movie-management-system-crud-1234.onrender.com/api/v1/user/register",
         {
           user: user,
         }

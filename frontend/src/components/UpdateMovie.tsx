@@ -29,7 +29,7 @@ const UpdateMovie: React.FC = () => {
         Authorization: `Bearer ${token}`,
       };
       const response = await axios.get(
-        `http://localhost:8001/api/v1/movie/getOneMovie/${movieId}`,
+        `https://movie-management-system-crud-1234.onrender.com/api/v1/movie/getOneMovie/${movieId}`,
         { headers }
       );
       const { data } = response.data;
@@ -68,7 +68,7 @@ const UpdateMovie: React.FC = () => {
       };
 
       const response = await axios.post(
-        `http://localhost:8001/api/v1/movie/updateMovie/${movieId}`,
+        `https://movie-management-system-crud-1234.onrender.com/api/v1/movie/updateMovie/${movieId}`,
         formData,
         { headers }
       );

@@ -37,7 +37,7 @@ const AddNewMovie: React.FC = () => {
       };
 
       const response = await axios.post(
-        "http://localhost:8001/api/v1/movie/createMovie",
+        "https://movie-management-system-crud-1234.onrender.com/api/v1/movie/createMovie",
         formData,
         { headers }
       );
